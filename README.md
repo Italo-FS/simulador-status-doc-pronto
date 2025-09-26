@@ -1,0 +1,1 @@
+# simulador-status-doc-pronto
