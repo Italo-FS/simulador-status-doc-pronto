@@ -1,61 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Teste de Status de Pedido</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Teste de Status de Pedido</title>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Simulador de Status de Pedido</h1>
-            <p>Teste as regras de status para pedidos, pesquisados e certidões</p>
-        </header>
-        
-        <div class="status-card">
-            <h2>Status do Pedido</h2>
-            <div id="pedidoStatus" class="pedido-status status-nao-iniciado">Não iniciado</div>
-            
-            <h3>Pesquisados</h3>
-            <div id="pesquisadosContainer">
-                <!-- Os pesquisados serão inseridos aqui via JavaScript -->
-            </div>
-            
-            <button id="addPesquisado" class="btn btn-add">Adicionar Pesquisado</button>
-        </div>
-        
-        <div class="controls">
-            <button id="resetBtn" class="btn">Resetar para Estado Inicial</button>
-            <button id="randomBtn" class="btn">Atribuir Status Aleatórios</button>
-        </div>
-        
-        <div class="rules">
-            <h3>Regras de Status</h3>
-            
-            <div class="rule-item">
-                <strong>Status do Pedido:</strong>
-                <ul>
-                    <li><strong>Pendente:</strong> Se pelo menos um pesquisado estiver com status Pendente.</li>
-                    <li><strong>Em andamento:</strong> Se pelo menos um pesquisado estiver com status Em andamento.</li>
-                    <li><strong>Concluído:</strong> Se todos os pesquisados estiverem com status Concluído ou Dispensado pelo cliente.</li>
-                    <li><strong>Não iniciado:</strong> Se todos os pesquisados estiverem exclusivamente com status Não iniciado.</li>
-                </ul>
-            </div>
-            
-            <div class="rule-item">
-                <strong>Status do Pesquisado:</strong>
-                <ul>
-                    <li><strong>Pendente:</strong> Se houver ao menos uma certidão com status Pendente pelo cliente.</li>
-                    <li><strong>Em andamento:</strong> Se houver ao menos uma certidão com: Aguardando emissão, Aguardando orçamento, Aguardando pagamento do orçamento, Respondida pelo cliente.</li>
-                    <li><strong>Dispensado pelo cliente:</strong> Se TODAS as certidões forem Dispensada pelo cliente.</li>
-                    <li><strong>Concluído:</strong> Se TODAS as certidões forem Emitida.</li>
-                    <li><strong>Não iniciado:</strong> Se TODAS as certidões forem exclusivamente Não iniciado.</li>
-                </ul>
-            </div>
-        </div>
+  <div class="container">
+    <!-- <header>
+      <h1>Simulador de Status de Pedido</h1>
+      <p>Teste as regras de status para pedidos, pesquisados e certidões</p>
+    </header> -->
+
+    <div class="card">
+      <h2>Status do Pedido</h2>
+      <div id="pedidoStatus" class="pedido-status status-nao-iniciado">Não iniciado</div>
+
+      <h3>Pesquisados</h3>
+      <div id="pesquisadosContainer">
+        <!-- Os pesquisados serão inseridos aqui via JavaScript -->
+      </div>
+
+      <button id="addPesquisado" class="btn btn-add">Adicionar Pesquisado</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="controls">
+      <button id="resetBtn" class="btn">Resetar para Estado Inicial</button>
+      <button id="randomBtn" class="btn">Atribuir Status Aleatórios</button>
+    </div>
+
+    <div class="card">
+      <h3>Regras de Status</h3>
+
+      <div class="rule-item">
+        <strong>Status do Pedido:</strong>
+        <ul class="rule-list">
+          <li><strong>Pendente:</strong> Se pelo menos um pesquisado estiver com status Pendente.</li>
+          <li><strong>Em andamento:</strong> Se pelo menos um pesquisado estiver com status Em andamento.</li>
+          <li><strong>Concluído:</strong> Se todos os pesquisados estiverem com status Concluído ou Dispensado pelo
+            cliente.</li>
+          <li><strong>Não iniciado:</strong> Se todos os pesquisados estiverem exclusivamente com status Não iniciado.
+          </li>
+        </ul>
+      </div>
+
+      <div class="rule-item">
+        <strong>Status do Pesquisado:</strong>
+        <ul class="rule-list">
+          <li><strong>Pendente:</strong> Se houver ao menos uma certidão com status Pendente pelo cliente.</li>
+          <li><strong>Em andamento:</strong> Se houver ao menos uma certidão com: Aguardando emissão, Aguardando
+            orçamento, Aguardando pagamento do orçamento, Respondida pelo cliente.</li>
+          <li><strong>Dispensado pelo cliente:</strong> Se TODAS as certidões forem Dispensada pelo cliente.</li>
+          <li><strong>Concluído:</strong> Se TODAS as certidões forem Emitida.</li>
+          <li><strong>Não iniciado:</strong> Se TODAS as certidões forem exclusivamente Não iniciado.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Documentos</h3>
+      <a href="public/Status do pedido, do pesquisado e certidões v1.xlsx" download>
+        Status do pedido, do pesquisado e certidões v1.xlsx
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
